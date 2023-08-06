@@ -1,0 +1,45 @@
+.image{
+    width: 90%;
+    height: 50%;
+    display: block;
+    background-color: white;
+    margin-top: 30px;
+}
+
+.title{
+    font-size: 30px;
+    color: #4E4FEB; 
+    text-align: center;
+    background-color: white;
+    margin-top: 30px;
+}
+
+
+.loginButton{
+    width: 50%;
+    height: 50px;
+    margin: auto;
+    display: block;
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: #4E4FEB;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer; 
+    margin-top: 30px;
+}
+.Link{
+    text-decoration: none;
+}
+
+.new{
+    font-size: 15px;
+    text-align: center;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.newPerson{
+    color: #4E4FEB;
+}

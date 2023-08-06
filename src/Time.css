@@ -1,0 +1,53 @@
+.information{
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.timer{
+    font-size: 100px;
+    text-align: center;
+    color: black;
+}
+.actions{
+    display: flex;
+    justify-content: center;
+}
+
+.action{
+    width: 20%;
+    height: 50px;
+    font-weight: 400;
+    background-color: #4E4FEB;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer; 
+}
+
+.action1{
+    width: 20%;
+    height: 50px;
+    font-weight: 400;
+    background-color: #4E4FEB;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer; 
+    margin-top: 100px;
+}
+
+.action2{
+    width: 20%;
+    height: 50px;
+    font-weight: 400;
+    background-color:gray;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer; 
+    margin-top: 100px;
+}
+
