@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import styled from "styled-components";
+
 
 export default function Login() {
     const [id, setID] = useState('');
@@ -36,46 +38,142 @@ export default function Login() {
         setNotAllow(true);
     },[idValid,pwValid]);
 
+
     return (
-    <div className='page'>
+    <Page>
 
-        <div className='titleWrap'>
-            <span style={{ fontSize: '40px' }}>헬</span>스를 
-            <span style={{ fontSize: '40px' }}>    품</span>은
-            <span style={{ fontSize: '40px' }}>    타</span>이머
-        </div>
+        <TitleWrap>
+            <HealthPumTa>헬</HealthPumTa>스를 
+            <HealthPumTa>    품</HealthPumTa>은
+            <HealthPumTa>    타</HealthPumTa>이머
+        </TitleWrap>
 
-        <div className='contentWrap'>
+        <ContentWrap>
 
-            <div className='inputTitle'>ID</div>
-            <div className='inputWrap'>
-                <input 
+            <InputId>ID</InputId>
+            <InputWrap>
+                <Input
                 type='text'
                 className='input' 
                 placeholder='올바른 아이디를 입력해주세요  (한글 x)' 
                 value={id}
                 onChange={handleId}>
-                </input>
-            </div>
+                </Input>
+            </InputWrap>
             
-            <div style={{marginTop:"26px"}}className='inputTitle'>PASSWORD</div>      
-            <div className='inputWrap'>
-                <input 
+            <InputTitle>PASSWORD</InputTitle>      
+            <InputWrap>
+                <Input 
                 type='password'
                 className='input' 
                 placeholder='영문, 숫자, 특수문자 포함 8자 이상' 
                 value={pw}
                 onChange={handlePw}>
-                </input>
-            </div>         
-        </div>
+                </Input>
+            </InputWrap>         
+        </ContentWrap>
 
-        <div>
-            <button disabled={notAllow} className='bottonButton'>
+        <LoginBottom>
+            <BottomButton disabled={notAllow}>
                 로그인
-            </button>
-        </div>
+            </BottomButton>
+        </LoginBottom>
 
-    </div>
+    </Page>
     )
 }
+
+const Page = styled.div`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 500px;
+    padding: 0 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color:white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
+
+const TitleWrap = styled.div`
+    margin-top: 100px;
+    font-size: 26px;
+    color: #4E4FEB; 
+    text-align: center;
+`;
+const HealthPumTa = styled.span`
+    font-size: 40px;
+`;
+
+const ContentWrap = styled.div`
+    margin-top: 60px;
+    flex: 1;
+    width: 80%;
+    align-self: center;
+`;
+
+const InputWrap = styled.div`
+    margin: auto;
+    display: block;    
+    border-radius: 10px;
+    padding:16px;
+    margin-top: 8px;
+    background-color: #4E4FEB;
+    border: 1px solid white;
+    width: 80%;
+`;
+
+const InputId = styled.div`
+    font-size: 20px;
+    font-weight: 400;
+    color: #4E4FEB;
+    
+`;
+
+const InputTitle = styled.div`
+    margin-top: 26px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #4E4FEB;
+`;
+
+const Input = styled.input`
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 300;
+    background-color: #4E4FEB;
+    color: white;
+    &::placeholder{
+        color:rgb(212, 212, 212);
+    }
+`;
+
+
+
+const LoginBottom = styled.div`
+    margin-bottom: 30%;
+`;
+
+const BottomButton = styled.button`
+    width: 50%;
+    height: 50px;
+    margin: auto;
+    display: block;
+    font-weight: 600;
+    background-color: #4E4FEB;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer; 
+    &:disabled{
+        background-color:white;
+        color: #4E4FEB;
+        border-color: #4E4FEB;
+    }
+`

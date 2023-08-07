@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
-import './Time.css';
 import { Link } from 'react-router-dom'
+import styled from "styled-components";
+
 
 export default function Time() {
 
@@ -21,35 +22,101 @@ export default function Time() {
     
 
     return (
-        <div className="page">
-            <div className='information'>
+        <Page>
+            <Information>
                 <div>000님</div>
                 <div>오늘도 힘차게 시작해볼까요?</div>
-            </div>
+            </Information>
             
-            <p className='timer'>{format(time)}</p>
+            <Timer>{format(time)}</Timer>
 
-            <div className='actions'>
-                <button className='action'>이전</button>
-                <button className='action' onClick={() => setTime(0)}>초기화</button>
-                <button className='action' onClick={() => {
+            <Actions>
+                <Action onClick={() => setTime(0)}>초기화</Action>
+                <Action onClick={() => {
                     if(running)clearInterval(timer.current)
                     setRunning(!running)
                 }}>
                     {running ? '일시정지' : '시작'}
-                    </button>
-            </div>
+                    </Action>
+            </Actions>
 
-            <div className='actions'>
-                <button className='action2'>목표</button>
-                <button className='action1'>타이머</button>
-                <button className='action2'>내정보</button>
-            </div>
-        </div>
+            <Actions>
+                <Action2>목표</Action2>
+                <Action1>타이머</Action1>
+                <Action2>내정보</Action2>
+            </Actions>
+        </Page>
     )
 }
 
+const Page = styled.div`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 500px;
+    padding: 0 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color:white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+`;
 
+const Information = styled.div`
+    margin-top: 50px;
+    margin-left:30px;
+    font-size: 20px;
+`;
+const Timer = styled.div`
+    font-size: 500%;
+    text-align: center;
+    color: black;
+    margin-top: 60px;
+`;
+
+const Actions = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+`
+const Action = styled.button`
+    width: 20%;
+    height: 50px;
+    font-weight: 400;
+    background-color: #4E4FEB;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+`
+const Action1 = styled.button`
+    width: 20%;
+    height: 50px;
+    font-weight: 400;
+    background-color: #4E4FEB;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer; 
+    margin-top: 100px;
+`
+const Action2 = styled.button`
+    width: 20%;
+    height: 50px;
+    font-weight: 400;
+    background-color:gray;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer; 
+    margin-top: 100px;
+`
 
 const format = (time) => {
     let hours = Math.floor(time / 60 / 60%24)
