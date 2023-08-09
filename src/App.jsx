@@ -1,13 +1,12 @@
 import React from 'react';
 import {
   BrowserRouter, 
-  Link, 
   Route, 
   Routes} 
   from 'react-router-dom';
-import Login from "./Login";
-import Time from "./Time";
-import Main from "./Main";
+import Login from "./pages/Login";
+import Time from "./pages/Time";
+import Main from "./pages/Main";
 
 function App() {
   return (
